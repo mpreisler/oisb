@@ -39,7 +39,7 @@ restrictions:
 #include "OISBSequenceAction.h"
 #include "OISBTriggerAction.h"
 
-#include <strstream>
+#include <sstream>
 #include <fstream>
 #include <iostream>
 #include <cstring>
