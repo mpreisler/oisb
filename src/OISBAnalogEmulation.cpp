@@ -75,17 +75,18 @@ namespace OISB
 
         getBindables(binding, &decrease, &increase);
 
+        // We have to use -= and += here for the case where both increase and
+        // decrease are active, they have to cancel each other out.
+
         if (decrease->isActive())
         {
             // decrease is pressed
-                        
-            ret = ((-1.0f) * mDecreaseSpeed * delta) * mTarget->getSensitivity();
+            ret -= (mDecreaseSpeed * delta) * mTarget->getSensitivity();
         }
         if (increase->isActive())
         {
             // increase is pressed
-                        
-            ret = ((+1.0f) * mIncreaseSpeed * delta) * mTarget->getSensitivity();
+            ret += (mIncreaseSpeed * delta) * mTarget->getSensitivity();
         }
 
         if (mReturnEnabled && (!increase->isActive() && !decrease->isActive()))
