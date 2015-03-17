@@ -1,0 +1,1 @@
+Wraps OIS and provides means to make action binding/mapping.
